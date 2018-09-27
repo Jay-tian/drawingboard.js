@@ -1,6 +1,6 @@
 {
 	"name": "drawingboard.min.js",
-	"version": "0.4.7",
+	"version": "0.4.8",
 	"devDependencies": {
 		"grunt": "^1.0.3",
 		"grunt-contrib-concat": "~0.3.0",

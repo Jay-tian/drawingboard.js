@@ -322,7 +322,28 @@ DrawingBoard.Board.prototype = {
 			if (opts.stretch) {
 				ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height);
 			} else {
-				ctx.drawImage(img, 0, 0);
+				var x,y = 0;
+				var w = img.width;
+				var h = img.height;
+		
+				var rate = (img.width/img.height) - (ctx.canvas.width/ctx.canvas.height);
+				// rate 大于0，图片比例大于画板
+				if (rate > 0) {
+				  // 图片比例大于画板，只要关注图片宽度是否大于画板,
+				  if (img.width > ctx.canvas.width) {
+					w = ctx.canvas.width;
+					h = img.height / (img.width/ ctx.canvas.width);
+				  } 
+				} else {
+				  if (img.height > ctx.canvas.height) {
+					h = ctx.canvas.height;
+					w = img.width / (img.height/ ctx.canvas.height);
+				  }
+				}
+				x = (ctx.canvas.width - w) /2;
+				y = (ctx.canvas.height - h)/2;
+		
+				ctx.drawImage(img, x, y, w, h);
 			}
 
 			ctx.globalCompositeOperation = oldGCO;
