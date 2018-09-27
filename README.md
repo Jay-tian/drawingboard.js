@@ -1,3 +1,8 @@
+# update list
+
+* 默认背景图片等比例缩放 画布居中
+* The background picture is proportional to the scale of the canvas and in the center of canvas
+
 # drawingboard.js
 
 This is a canvas based drawing app that you can integrate easily on your website.
